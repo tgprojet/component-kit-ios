@@ -16,9 +16,6 @@ Pod::Spec.new do |s|
   s.source_files = 'StorageKit/Classes/**/*'
   s.resource_bundle = { 'StorageKit' => ['StorageKit/Assets/*.xcassets', 'StorageKit/Assets/*.lproj/*.strings'] }
 
-  s.dependency 'ThemeKit.swift', '~> 1.0'
-  s.dependency 'ComponentKit.swift', '~> 1.0'
   s.dependency 'LanguageKit.swift', '~> 1.0'
   s.dependency 'KeychainAccess', '~> 4.1'
-  s.dependency 'SnapKit', '~> 5.0'
 end
