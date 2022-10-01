@@ -1,10 +1,11 @@
-import RxCocoa
+//import RxCocoa
+import RxSwift
 
 public class ThemeManager {
     private static let defaultLightMode: ThemeMode = .system
     private static let userDefaultsKey = "theme_mode"
 
-    private let changeThemeRelay = PublishRelay<ThemeMode>()
+    //private let changeThemeRelay = PublishRelay<ThemeMode>()
 
     public static var shared = ThemeManager()
 
@@ -14,7 +15,7 @@ public class ThemeManager {
             currentTheme = ThemeManager.theme(mode: themeMode)
             Theme.updateNavigationBarTheme()
 
-            changeThemeRelay.accept(themeMode)
+  //          changeThemeRelay.accept(themeMode)
         }
     }
 
@@ -44,7 +45,7 @@ public class ThemeManager {
     }
 
     public var changeThemeSignal: Signal<ThemeMode> {
-        changeThemeRelay.asSignal()
+       // changeThemeRelay.asSignal()
     }
 
 }
