@@ -1,6 +1,5 @@
 import UIKit
 import SnapKit
-import ComponentKit
 
 class NumPad: UICollectionView {
     private var enabled = true
