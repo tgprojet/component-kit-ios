@@ -1,5 +1,6 @@
 //import RxCocoa
 import RxSwift
+public typealias Signal<Element> = SharedSequence<SignalSharingStrategy, Element>
 
 public class ThemeManager {
     private static let defaultLightMode: ThemeMode = .system
@@ -44,9 +45,9 @@ public class ThemeManager {
         }
     }
 
-    public var changeThemeSignal : String{
+    public var changeThemeSignal : Signal<ThemeMode> {
        // changeThemeRelay.asSignal()
-        return ""
+        return Signal.empty()
     }
 
 }
