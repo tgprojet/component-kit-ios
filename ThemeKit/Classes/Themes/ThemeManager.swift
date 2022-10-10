@@ -44,8 +44,9 @@ public class ThemeManager {
         }
     }
 
-    public var changeThemeSignal: Signal<ThemeMode> {
+    public var changeThemeSignal : String{
        // changeThemeRelay.asSignal()
+        return ""
     }
 
 }
@@ -57,14 +58,14 @@ public class Theme {
     }
 
     public static func updateNavigationBarTheme() {
-        let standardAppearance = UINavigationBarAppearance()
-        standardAppearance.configureWithTransparentBackground()
-        standardAppearance.backgroundColor = .themeNavigationBarBackground
-        standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.themeLeah]
-        standardAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.themeLeah]
+       // let standardAppearance = UINavigationBarAppearance()
+      //  standardAppearance.configureWithTransparentBackground()
+      //  standardAppearance.backgroundColor = .themeNavigationBarBackground
+      //  standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.themeLeah]
+      //  standardAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.themeLeah]
 
-        UINavigationBar.appearance().standardAppearance = standardAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = standardAppearance
+      //  UINavigationBar.appearance().standardAppearance = standardAppearance
+      //  UINavigationBar.appearance().scrollEdgeAppearance = standardAppearance
     }
 
 }
