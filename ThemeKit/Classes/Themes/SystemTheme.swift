@@ -1,10 +1,10 @@
 import UIKit
 
 class SystemTheme: ITheme {
-    var hudBlurStyle: UIBlurEffect.Style { UITraitCollection.default.userInterfaceStyle == .dark ? .dark : .extraLight }
+    var hudBlurStyle: UIBlurEffect.Style { UIScreen.main.traitCollection.userInterfaceStyle == .dark ? .dark : .extraLight }
     var keyboardAppearance: UIKeyboardAppearance { .default }
     var statusBarStyle: UIStatusBarStyle { .default }
 
-    var alphaSecondaryButtonGradient: CGFloat { UITraitCollection.current.userInterfaceStyle == .dark ? 0.4 : 1 }
+    var alphaSecondaryButtonGradient: CGFloat { UIScreen.main.traitCollection.userInterfaceStyle == .dark ? 0.4 : 1 }
 
 }
