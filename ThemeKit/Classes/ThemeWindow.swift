@@ -9,10 +9,10 @@ open class ThemeWindow: UIWindow {
 
         update(themeMode: ThemeManager.shared.themeMode)
 
-        ThemeManager.shared.changeThemeSignal
-                .emit(onNext: { [weak self] themeMode in
-                    self?.update(themeMode: themeMode)
-                })
+   //     ThemeManager.shared.changeThemeSignal
+     //           .emit(onNext: { [weak self] themeMode in
+       //             self?.update(themeMode: themeMode)
+         //       })
                 .disposed(by: disposeBag)
     }
 
@@ -24,11 +24,11 @@ open class ThemeWindow: UIWindow {
         UIView.transition (with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
             switch themeMode {
             case .system:
-                self.overrideUserInterfaceStyle = .unspecified
+                self.overrideUserInterfaceStyle = .default
             case .dark:
-                self.overrideUserInterfaceStyle = .dark
+                self.overrideUserInterfaceStyle = .default
             case .light:
-                self.overrideUserInterfaceStyle = .light
+                self.overrideUserInterfaceStyle = .default
             }
         }, completion: nil)
     }
