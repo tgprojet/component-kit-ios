@@ -1,50 +1,6 @@
 //import RxCocoa
 import RxSwift
 
-public struct SharedSequence<SharingStrategy: SharingStrategyProtocol, Element> : SharedSequenceConvertibleType, ObservableConvertibleType {
-    let source: Observable<Element>
-
-    init(_ source: Observable<Element>) {
-        self.source = SharingStrategy.share(source)
-    }
-
-    init(raw: Observable<Element>) {
-        self.source = raw
-    }
-
-    #if EXPANDABLE_SHARED_SEQUENCE
-    /**
-     This method is extension hook in case this unit needs to extended from outside the library.
-     
-     By defining `EXPANDABLE_SHARED_SEQUENCE` one agrees that it's up to them to ensure shared sequence
-     properties are preserved after extension.
-    */
-    public static func createUnsafe<Source: ObservableType>(source: Source) -> SharedSequence<SharingStrategy, Source.Element> {
-        SharedSequence<SharingStrategy, Source.Element>(raw: source.asObservable())
-    }
-    #endif
-
-    /**
-    - returns: Built observable sequence.
-    */
-    public func asObservable() -> Observable<Element> {
-        self.source
-    }
-
-    /**
-    - returns: `self`
-    */
-    public func asSharedSequence() -> SharedSequence<SharingStrategy, Element> {
-        self
-    }
-    
-    /// - returns: `Infallible` interface.
-    public func asInfallible() -> Infallible<Element> {
-        asInfallible(onErrorFallbackTo: .empty())
-    }
-}
-
-public typealias Signal<Element> = SharedSequence<SignalSharingStrategy, Element>
 
 public class ThemeManager {
     private static let defaultLightMode: ThemeMode = .system
@@ -89,9 +45,9 @@ public class ThemeManager {
         }
     }
 
-    public var changeThemeSignal : Signal<ThemeMode> {
+    public var changeThemeSignal : Observable<ThemeMode> {
        // changeThemeRelay.asSignal()
-        return Signal.empty()
+        return Observable.from([.light])
     }
 
 }
