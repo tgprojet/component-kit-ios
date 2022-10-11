@@ -16,7 +16,7 @@ public class BorderedView: UIView {
         }
     }
 
-    override public var borderWidth: CGFloat {
+    public var borderWidth: CGFloat {
         get { _borderWidth }
         set {
             _borderWidth = newValue
@@ -24,7 +24,7 @@ public class BorderedView: UIView {
         }
     }
 
-    override public var borderColor: UIColor? {
+    public var borderColor: UIColor? {
         get { _borderColor }
         set {
             _borderColor = newValue
