@@ -13,7 +13,7 @@ open class ThemeWindow: UIWindow {
      //           .emit(onNext: { [weak self] themeMode in
        //             self?.update(themeMode: themeMode)
          //       })
-                .disposed(by: disposeBag)
+          //      .disposed(by: disposeBag)
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -22,14 +22,14 @@ open class ThemeWindow: UIWindow {
 
     private func update(themeMode: ThemeMode) {
         UIView.transition (with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            switch themeMode {
-            case .system:
-                self.overrideUserInterfaceStyle = .default
-            case .dark:
-                self.overrideUserInterfaceStyle = .default
-            case .light:
-                self.overrideUserInterfaceStyle = .default
-            }
+//             switch themeMode {
+//             case .system:
+//                 self.overrideUserInterfaceStyle = .default
+//             case .dark:
+//                 self.overrideUserInterfaceStyle = .default
+//             case .light:
+//                 self.overrideUserInterfaceStyle = .default
+//             }
         }, completion: nil)
     }
 
