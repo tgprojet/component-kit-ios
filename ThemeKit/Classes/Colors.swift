@@ -63,9 +63,7 @@ extension UIColor {
     public static var themeBlackTenTwenty: UIColor { color(dark: .themeBlack10, light: .themeBlack20) }
 
     private static func color(dark: UIColor, light: UIColor) -> UIColor {
-        UIColor { traits in
-            traits.userInterfaceStyle == .dark ? dark : light
-        }
+        return dark
     }
 
 }
