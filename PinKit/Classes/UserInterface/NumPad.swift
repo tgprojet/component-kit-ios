@@ -225,7 +225,7 @@ class NumPadNumberCell: UICollectionViewCell {
             maker.edges.equalToSuperview()
         }
 
-        button.borderWidth = .heightOneDp
+        button.borderWidthFloat = .heightOneDp
         button.cornerRadius = 36
 
         button.addSubview(textHolderView)
@@ -256,10 +256,10 @@ class NumPadNumberCell: UICollectionViewCell {
         button.setBackgroundColor(color: .clear, forState: .normal)
 
         if filled {
-            button.borderColor = .themeSteel20
+            button.borderUIColor = .themeSteel20
             button.setBackgroundColor(color: .themeJeremy, forState: .highlighted)
         } else {
-            button.borderColor = .clear
+            button.borderUIColor = .clear
             button.setBackgroundColor(color: .clear, forState: .highlighted)
         }
 
